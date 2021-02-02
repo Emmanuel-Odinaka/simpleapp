@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Create:
+      input#name.form-control(type='text', placeholder='Name..' name='name' value=(undefined===teamodinaka ? '' : teamodinaka.name))
+    button.btn.btn-primary(type='submit') Submit form 1
+
+  if errors
+   ul
+    for error in errors
+     li!= error.msg
